@@ -1,4 +1,4 @@
-package cat.xojan.numberpadsample;
+package cat.xojan.numpad;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

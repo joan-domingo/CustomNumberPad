@@ -1,4 +1,4 @@
-package cat.xojan.numberpadsample;
+package cat.xojan.numpadsample;
 
 import org.junit.Test;
 
