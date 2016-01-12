@@ -124,15 +124,14 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <TextView
+        <RelativeLayout
             android:id="@+id/button_custom1"
             style="@style/NumberPadButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:tag="custom1"
-            android:text="@string/number_00"/>
+            android:tag="custom2"/>
 
         <TextView
             android:id="@+id/button0"
@@ -151,14 +150,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:tag="custom2">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:drawable/ic_delete"/>
-
-        </RelativeLayout>
+            android:tag="custom2"/>
 
     </LinearLayout>
 
