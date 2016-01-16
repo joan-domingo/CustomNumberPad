@@ -16,5 +16,9 @@
         <attr name="button8_background" format="integer" />
         <attr name="button9_background" format="integer" />
         <attr name="button0_background" format="integer" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+        <attr name="textBold" format="boolean" />
+        <attr name="fontFamily" format="string" />
     </declare-styleable>
 </resources>

@@ -2,6 +2,7 @@ package cat.xojan.numpad;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -15,16 +16,11 @@ import cat.xojan.numberpad.R;
  */
 public class NumPadView extends LinearLayout {
 
-    private TextView mButton0;
-    private TextView mButton1;
-    private TextView mButton2;
-    private TextView mButton3;
-    private TextView mButton4;
-    private TextView mButton5;
-    private TextView mButton6;
-    private TextView mButton7;
-    private TextView mButton8;
-    private TextView mButton9;
+    private static final String DEFAULT_FONT_FAMILY = "sans-serif";
+    private static final int DEFAULT_TYPEFACE = Typeface.NORMAL;
+
+    private TextView mButton0, mButton1, mButton2, mButton3, mButton4, mButton5, mButton6,
+            mButton7, mButton8, mButton9;
     private TextView mCustomButton1;
     private TextView mCustomButton2;
     private Drawable mCustomButton1Background;
@@ -41,6 +37,10 @@ public class NumPadView extends LinearLayout {
     private Drawable mButton8Background;
     private Drawable mButton9Background;
     private Drawable mButton0Background;
+    private float mTextSize;
+    private int mTextColor;
+    private boolean mTextBold;
+    private String mFontFamily;
 
     public NumPadView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -48,6 +48,9 @@ public class NumPadView extends LinearLayout {
         readAttributes(context, attrs);
         updateBackground();
         updateCustomButtonText();
+        updateTextSize();
+        updateTextColor();
+        updateFontFamily();
     }
 
     public void setNumberPadClickListener(OnNumPadClickListener onNumberPadClickListener) {
@@ -97,6 +100,12 @@ public class NumPadView extends LinearLayout {
                 0, 0);
 
         try {
+            mTextSize = a.getDimension(R.styleable.NumPadView_textSize, 24);
+            mTextColor = a.getColor(R.styleable.NumPadView_textColor,
+                    getResources().getColor(R.color.grey));
+            mTextBold = a.getBoolean(R.styleable.NumPadView_textBold, false);
+            mFontFamily = a.getString(R.styleable.NumPadView_fontFamily);
+
             mButton1Background = a.getDrawable(R.styleable.NumPadView_button1_background);
             mButton2Background = a.getDrawable(R.styleable.NumPadView_button2_background);
             mButton3Background = a.getDrawable(R.styleable.NumPadView_button3_background);
@@ -122,16 +131,16 @@ public class NumPadView extends LinearLayout {
     }
 
     private void updateBackground() {
-        mButton0.setBackground(mButton1Background);
-        mButton1.setBackground(mButton2Background);
-        mButton2.setBackground(mButton3Background);
-        mButton3.setBackground(mButton4Background);
-        mButton4.setBackground(mButton5Background);
-        mButton5.setBackground(mButton6Background);
-        mButton6.setBackground(mButton7Background);
-        mButton7.setBackground(mButton8Background);
-        mButton8.setBackground(mButton9Background);
-        mButton9.setBackground(mButton0Background);
+        mButton0.setBackground(mButton0Background);
+        mButton1.setBackground(mButton1Background);
+        mButton2.setBackground(mButton2Background);
+        mButton3.setBackground(mButton3Background);
+        mButton4.setBackground(mButton4Background);
+        mButton5.setBackground(mButton5Background);
+        mButton6.setBackground(mButton6Background);
+        mButton7.setBackground(mButton7Background);
+        mButton8.setBackground(mButton8Background);
+        mButton9.setBackground(mButton9Background);
         mCustomButton1.setBackground(mCustomButton1Background);
         mCustomButton2.setBackground(mCustomButton2Background);
     }
@@ -139,5 +148,52 @@ public class NumPadView extends LinearLayout {
     private void updateCustomButtonText() {
         mCustomButton1.setText(mCustomButton1Text);
         mCustomButton2.setText(mCustomButton2Text);
+    }
+
+    private void updateTextSize() {
+        mButton0.setTextSize(mTextSize);
+        mButton1.setTextSize(mTextSize);
+        mButton2.setTextSize(mTextSize);
+        mButton3.setTextSize(mTextSize);
+        mButton4.setTextSize(mTextSize);
+        mButton5.setTextSize(mTextSize);
+        mButton6.setTextSize(mTextSize);
+        mButton7.setTextSize(mTextSize);
+        mButton8.setTextSize(mTextSize);
+        mButton9.setTextSize(mTextSize);
+        mCustomButton1.setTextSize(mTextSize);
+        mCustomButton2.setTextSize(mTextSize);
+    }
+    private void updateTextColor() {
+        mButton0.setTextColor(mTextColor);
+        mButton1.setTextColor(mTextColor);
+        mButton2.setTextColor(mTextColor);
+        mButton3.setTextColor(mTextColor);
+        mButton4.setTextColor(mTextColor);
+        mButton5.setTextColor(mTextColor);
+        mButton6.setTextColor(mTextColor);
+        mButton7.setTextColor(mTextColor);
+        mButton8.setTextColor(mTextColor);
+        mButton9.setTextColor(mTextColor);
+        mCustomButton1.setTextColor(mTextColor);
+        mCustomButton2.setTextColor(mTextColor);
+    }
+
+    private void updateFontFamily() {
+        String fontFamily = mFontFamily != null ? mFontFamily : DEFAULT_FONT_FAMILY;
+        int typeface = mTextBold ? Typeface.BOLD : DEFAULT_TYPEFACE;
+        Typeface fontStyle = Typeface.create(fontFamily, typeface);
+        mButton0.setTypeface(fontStyle);
+        mButton1.setTypeface(fontStyle);
+        mButton2.setTypeface(fontStyle);
+        mButton3.setTypeface(fontStyle);
+        mButton4.setTypeface(fontStyle);
+        mButton5.setTypeface(fontStyle);
+        mButton6.setTypeface(fontStyle);
+        mButton7.setTypeface(fontStyle);
+        mButton8.setTypeface(fontStyle);
+        mButton9.setTypeface(fontStyle);
+        mCustomButton1.setTypeface(fontStyle);
+        mCustomButton2.setTypeface(fontStyle);
     }
 }

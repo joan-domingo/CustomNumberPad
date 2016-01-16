@@ -21,7 +21,11 @@
         numpad:button9_background="@drawable/button_background"
         numpad:custom_button1_background="@drawable/button_del_background"
         numpad:custom_button2_background="@drawable/button_ok_background"
-        numpad:custom_button1_text="OK"
-        numpad:custom_button2_text="DEL"/>
+        numpad:custom_button1_text="DEL"
+        numpad:custom_button2_text="OK"
+        numpad:textSize="14sp"
+        numpad:textBold="false"
+        numpad:textColor="@color/dark_grey"
+        numpad:fontFamily="sans-serif-light"/>
 
 </RelativeLayout>
