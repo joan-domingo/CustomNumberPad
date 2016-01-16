@@ -6,8 +6,7 @@ package cat.xojan.numpad;
 public interface OnNumPadClickListener {
 
     /**
-     * Get clicked value.
-     * @param value
+     * Get clicked button.
      */
-    void onPadClicked(NumPadButton value);
+    void onPadClicked(NumPadButton button);
 }

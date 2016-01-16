@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="NumberPadButton">
+    <style name="PadButtonDefaultStyle">
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
         <item name="android:textSize">24sp</item>
         <item name="android:fontFamily">sans-serif-light</item>

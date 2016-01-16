@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cat.xojan.numberpad.R;
@@ -26,17 +25,20 @@ public class NumPadView extends LinearLayout {
     private TextView mButton7;
     private TextView mButton8;
     private TextView mButton9;
-    private RelativeLayout mCustomButton1;
-    private RelativeLayout mCustomButton2;
+    private TextView mCustomButton1;
+    private TextView mCustomButton2;
     private Drawable mButtonBackground;
     private Drawable mCustomButton1Background;
     private Drawable mCustomButton2Background;
+    private String mCustomButton1Text;
+    private String mCustomButton2Text;
 
     public NumPadView(Context context, AttributeSet attrs) {
         super(context, attrs);
         setUpView(context);
         readAttributes(context, attrs);
         updateBackground();
+        updateCustomButtonText();
     }
 
     public void setNumberPadClickListener(OnNumPadClickListener onNumberPadClickListener) {
@@ -60,8 +62,8 @@ public class NumPadView extends LinearLayout {
         mButton7 = (TextView) view.findViewById(R.id.button7);
         mButton8 = (TextView) view.findViewById(R.id.button8);
         mButton9 = (TextView) view.findViewById(R.id.button9);
-        mCustomButton1 = (RelativeLayout) view.findViewById(R.id.button_custom1);
-        mCustomButton2 = (RelativeLayout) view.findViewById(R.id.button_custom2);
+        mCustomButton1 = (TextView) view.findViewById(R.id.button_custom1);
+        mCustomButton2 = (TextView) view.findViewById(R.id.button_custom2);
     }
 
     private void setUpPadButtons(NumPadClickListener numberPadClickListener) {
@@ -87,8 +89,14 @@ public class NumPadView extends LinearLayout {
 
         try {
             mButtonBackground = a.getDrawable(R.styleable.NumPadView_button_background);
-            mCustomButton1Background = a.getDrawable(R.styleable.NumPadView_custom_button1_background);
-            mCustomButton2Background = a.getDrawable(R.styleable.NumPadView_custom_button2_background);
+            mCustomButton1Background =
+                    a.getDrawable(R.styleable.NumPadView_custom_button1_background);
+            mCustomButton2Background =
+                    a.getDrawable(R.styleable.NumPadView_custom_button2_background);
+            mCustomButton1Text =
+                    a.getString(R.styleable.NumPadView_custom_button1_text);
+            mCustomButton2Text =
+                    a.getString(R.styleable.NumPadView_custom_button2_text);
         } finally {
             a.recycle();
         }
@@ -107,5 +115,10 @@ public class NumPadView extends LinearLayout {
         mButton9.setBackground(mButtonBackground);
         mCustomButton1.setBackground(mCustomButton1Background);
         mCustomButton2.setBackground(mCustomButton2Background);
+    }
+
+    private void updateCustomButtonText() {
+        mCustomButton1.setText(mCustomButton1Text);
+        mCustomButton2.setText(mCustomButton2Text);
     }
 }

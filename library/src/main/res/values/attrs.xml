@@ -4,5 +4,7 @@
         <attr name="button_background" format="integer" />
         <attr name="custom_button1_background" format="integer" />
         <attr name="custom_button2_background" format="integer" />
+        <attr name="custom_button1_text" format="string" />
+        <attr name="custom_button2_text" format="string" />
     </declare-styleable>
 </resources>

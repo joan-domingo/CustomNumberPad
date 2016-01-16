@@ -10,6 +10,8 @@
         android:layout_height="match_parent"
         numpad:button_background="@color/grey"
         numpad:custom_button1_background="@color/white"
-        numpad:custom_button2_background="@color/black"/>
+        numpad:custom_button2_background="@color/white"
+        numpad:custom_button1_text="00"
+        numpad:custom_button2_text="DEL"/>
 
 </RelativeLayout>
