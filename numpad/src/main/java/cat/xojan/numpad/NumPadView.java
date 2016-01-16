@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import cat.xojan.numberpad.R;
-
 /**
  * Draw the number pad view.
  */

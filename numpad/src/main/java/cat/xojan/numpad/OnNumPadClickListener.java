@@ -7,6 +7,7 @@ public interface OnNumPadClickListener {
 
     /**
      * Get clicked button.
+     * @param button clicked.
      */
     void onPadClicked(NumPadButton button);
 }

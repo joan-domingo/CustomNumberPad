@@ -4,6 +4,20 @@ This is a library that provides a customizable numeric keypad view for Android.
 ![](https://raw.githubusercontent.com/xojan/CustomNumberPad/master/screenshots/Screenshot_20160116-114934.png)
 ![](https://raw.githubusercontent.com/xojan/CustomNumberPad/master/screenshots/Screenshot_20160116-115000.png)
 
+in your module build.gradle file:
+```
+repositories {
+    maven {
+        url 'https://dl.bintray.com/xojan/maven/'
+    }
+}
+
+...
+
+dependencies {
+    compile 'cat.xojan:numpad:1.0.0'
+}
+```
 
 in your xml layout:
 ```
