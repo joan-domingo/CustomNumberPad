@@ -27,11 +27,20 @@ public class NumPadView extends LinearLayout {
     private TextView mButton9;
     private TextView mCustomButton1;
     private TextView mCustomButton2;
-    private Drawable mButtonBackground;
     private Drawable mCustomButton1Background;
     private Drawable mCustomButton2Background;
     private String mCustomButton1Text;
     private String mCustomButton2Text;
+    private Drawable mButton1Background;
+    private Drawable mButton2Background;
+    private Drawable mButton3Background;
+    private Drawable mButton4Background;
+    private Drawable mButton5Background;
+    private Drawable mButton6Background;
+    private Drawable mButton7Background;
+    private Drawable mButton8Background;
+    private Drawable mButton9Background;
+    private Drawable mButton0Background;
 
     public NumPadView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -88,7 +97,17 @@ public class NumPadView extends LinearLayout {
                 0, 0);
 
         try {
-            mButtonBackground = a.getDrawable(R.styleable.NumPadView_button_background);
+            mButton1Background = a.getDrawable(R.styleable.NumPadView_button1_background);
+            mButton2Background = a.getDrawable(R.styleable.NumPadView_button2_background);
+            mButton3Background = a.getDrawable(R.styleable.NumPadView_button3_background);
+            mButton4Background = a.getDrawable(R.styleable.NumPadView_button4_background);
+            mButton5Background = a.getDrawable(R.styleable.NumPadView_button5_background);
+            mButton6Background = a.getDrawable(R.styleable.NumPadView_button6_background);
+            mButton7Background = a.getDrawable(R.styleable.NumPadView_button7_background);
+            mButton8Background = a.getDrawable(R.styleable.NumPadView_button8_background);
+            mButton9Background = a.getDrawable(R.styleable.NumPadView_button9_background);
+            mButton0Background = a.getDrawable(R.styleable.NumPadView_button0_background);
+
             mCustomButton1Background =
                     a.getDrawable(R.styleable.NumPadView_custom_button1_background);
             mCustomButton2Background =
@@ -103,16 +122,16 @@ public class NumPadView extends LinearLayout {
     }
 
     private void updateBackground() {
-        mButton0.setBackground(mButtonBackground);
-        mButton1.setBackground(mButtonBackground);
-        mButton2.setBackground(mButtonBackground);
-        mButton3.setBackground(mButtonBackground);
-        mButton4.setBackground(mButtonBackground);
-        mButton5.setBackground(mButtonBackground);
-        mButton6.setBackground(mButtonBackground);
-        mButton7.setBackground(mButtonBackground);
-        mButton8.setBackground(mButtonBackground);
-        mButton9.setBackground(mButtonBackground);
+        mButton0.setBackground(mButton1Background);
+        mButton1.setBackground(mButton2Background);
+        mButton2.setBackground(mButton3Background);
+        mButton3.setBackground(mButton4Background);
+        mButton4.setBackground(mButton5Background);
+        mButton5.setBackground(mButton6Background);
+        mButton6.setBackground(mButton7Background);
+        mButton7.setBackground(mButton8Background);
+        mButton8.setBackground(mButton9Background);
+        mButton9.setBackground(mButton0Background);
         mCustomButton1.setBackground(mCustomButton1Background);
         mCustomButton2.setBackground(mCustomButton2Background);
     }

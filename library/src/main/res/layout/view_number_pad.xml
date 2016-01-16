@@ -131,7 +131,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:tag="custom2"/>
+            android:tag="custom1"/>
 
         <TextView
             android:id="@+id/button0"

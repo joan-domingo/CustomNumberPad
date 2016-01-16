@@ -6,5 +6,15 @@
         <attr name="custom_button2_background" format="integer" />
         <attr name="custom_button1_text" format="string" />
         <attr name="custom_button2_text" format="string" />
+        <attr name="button1_background" format="integer" />
+        <attr name="button2_background" format="integer" />
+        <attr name="button3_background" format="integer" />
+        <attr name="button4_background" format="integer" />
+        <attr name="button5_background" format="integer" />
+        <attr name="button6_background" format="integer" />
+        <attr name="button7_background" format="integer" />
+        <attr name="button8_background" format="integer" />
+        <attr name="button9_background" format="integer" />
+        <attr name="button0_background" format="integer" />
     </declare-styleable>
 </resources>
