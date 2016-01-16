@@ -1,25 +1,38 @@
+[![Platform](https://img.shields.io/badge/Platform-Android-brightgreen.svg?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=flat-square)]()
+[![API](https://img.shields.io/badge/API-14%2B-orange.svg?style=flat-square)]()
+
 # Customizable Numeric Keypad for Android
 This is a library that provides a customizable numeric keypad view for Android.
+
+Contributions are welcome.
 
 ![](https://raw.githubusercontent.com/xojan/CustomNumberPad/master/screenshots/Screenshot_20160116-114934.png)
 ![](https://raw.githubusercontent.com/xojan/CustomNumberPad/master/screenshots/Screenshot_20160116-115000.png)
 
-in your module build.gradle file:
-```
+
+## Download
+Include the following repository in your module gradle.build file.
+
+ ```
 repositories {
     maven {
         url 'https://dl.bintray.com/xojan/maven/'
     }
-}
+}}
+ ```
+  
+And add the gradle dependency.
 
-...
-
+ ```
 dependencies {
     compile 'cat.xojan:numpad:1.0.0'
 }
-```
+ ```
 
-in your xml layout:
+## Usage
+
+Include NumPadView in your layout XML.
 ```
 <cat.xojan.numpad.NumPadView
         android:id="@+id/custom_number_pad"
@@ -46,7 +59,7 @@ in your xml layout:
         numpad:fontFamily="sans-serif-light"/>
 ```
 
-in your activiy or fragment:
+In the onCreate of your activity or the onCreateView of your fragment, initialize the NumPadView and set OnNumPadClickListener to read the clicked button.
 ```
 @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,3 +75,18 @@ in your activiy or fragment:
         });
     }
 ```
+
+## License
+Copyright 2016 Joan Domingo Sallent
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
