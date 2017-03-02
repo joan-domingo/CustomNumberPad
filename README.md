@@ -1,5 +1,5 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen.svg?style=flat-square)]()
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg?style=flat-square)]()
+[ ![Download](https://api.bintray.com/packages/xojan/maven/numpad/images/download.svg?version=1.1.0) ](https://bintray.com/xojan/maven/numpad/1.1.0/link)
 [![API](https://img.shields.io/badge/API-14%2B-orange.svg?style=flat-square)]()
 
 # Customizable Numeric Keypad for Android
@@ -26,7 +26,7 @@ And add the gradle dependency.
 
  ```
 dependencies {
-    compile 'cat.xojan:numpad:1.0.0'
+    compile 'cat.xojan:numpad:1.1.0'
 }
  ```
 
@@ -56,7 +56,9 @@ Include NumPadView in your layout XML.
         numpad:textSize="14sp"
         numpad:textBold="false"
         numpad:textColor="@color/dark_grey"
-        numpad:fontFamily="sans-serif-light"/>
+        numpad:fontFamily="sans-serif-light"
+        numpad:verticalSeparatorMargin="12dp"
+        numpad:horizontalSeparatorMargin="12dp"/>
 ```
 
 In the onCreate of your activity or the onCreateView of your fragment, initialize the NumPadView and set OnNumPadClickListener to read the clicked button.
