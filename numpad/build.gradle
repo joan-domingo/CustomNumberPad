@@ -1,3 +1,11 @@
+/**
+ * When ready to upload the library to the Bintray repository:
+ * 1. Check the correctness of the library.
+ * ./gradlew install
+ *
+ * 2. If the above completed successfully,  upload to Bintray.
+ * ./gradlew bintrayUpload
+ */
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
