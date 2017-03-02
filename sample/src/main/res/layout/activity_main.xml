@@ -8,7 +8,7 @@
         android:id="@+id/custom_number_pad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/grey"
+        android:background="#3c4c3d"
         numpad:button0_background="@drawable/button_background"
         numpad:button1_background="@drawable/button_background"
         numpad:button2_background="@drawable/button_background"
@@ -26,6 +26,8 @@
         numpad:textSize="14sp"
         numpad:textBold="false"
         numpad:textColor="@color/dark_grey"
-        numpad:fontFamily="sans-serif-light"/>
+        numpad:fontFamily="sans-serif-light"
+        numpad:verticalSeparatorMargin="12dp"
+        numpad:horizontalSeparatorMargin="12dp"/>
 
 </RelativeLayout>

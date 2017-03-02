@@ -1,157 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
+    android:stretchColumns="0,2,4">
+    <TableRow
+        android:id="@+id/row1"
+        android:layout_weight="1">
         <TextView
             android:id="@+id/button1"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="1"
             android:text="@string/number_1"/>
 
         <TextView
+            android:id="@+id/vertical_1_1"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button2"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="2"
             android:text="@string/number_2"/>
 
         <TextView
+            android:id="@+id/vertical_1_2"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button3"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="3"
             android:text="@string/number_3"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
+    </TableRow>
+    <TableRow
+        android:id="@+id/row2"
+        android:layout_weight="1">
         <TextView
             android:id="@+id/button4"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="4"
             android:text="@string/number_4"/>
 
         <TextView
+            android:id="@+id/vertical_2_1"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button5"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="5"
             android:text="@string/number_5"/>
 
         <TextView
+            android:id="@+id/vertical_2_2"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button6"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="6"
             android:text="@string/number_6"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
+    </TableRow>
+    <TableRow
+        android:id="@+id/row3"
+        android:layout_weight="1">
         <TextView
             android:id="@+id/button7"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="7"
             android:text="@string/number_7"/>
 
         <TextView
+            android:id="@+id/vertical_3_1"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button8"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="8"
             android:text="@string/number_8"/>
 
         <TextView
+            android:id="@+id/vertical_3_2"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button9"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="9"
             android:text="@string/number_9"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
+    </TableRow>
+    <TableRow
+        android:id="@+id/row4"
+        android:layout_weight="1">
         <TextView
             android:id="@+id/button_custom1"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="custom1"/>
+
+        <TextView
+            android:id="@+id/vertical_4_1"
+            style="@style/VerticalSeparatorDefaultStyle"/>
 
         <TextView
             android:id="@+id/button0"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="0"
             android:text="@string/number_0"/>
 
         <TextView
+            android:id="@+id/vertical_4_2"
+            style="@style/VerticalSeparatorDefaultStyle"/>
+
+        <TextView
             android:id="@+id/button_custom2"
             style="@style/PadButtonDefaultStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
             android:tag="custom2"/>
-
-    </LinearLayout>
-
-</LinearLayout>
+    </TableRow>
+</TableLayout>

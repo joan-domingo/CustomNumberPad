@@ -6,39 +6,36 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 /**
  * Draw the number pad view.
  */
-public class NumPadView extends LinearLayout {
+public class NumPadView extends RelativeLayout {
 
     private static final String DEFAULT_FONT_FAMILY = "sans-serif";
     private static final int DEFAULT_TYPEFACE = Typeface.NORMAL;
 
     private TextView mButton0, mButton1, mButton2, mButton3, mButton4, mButton5, mButton6,
             mButton7, mButton8, mButton9;
-    private TextView mCustomButton1;
-    private TextView mCustomButton2;
-    private Drawable mCustomButton1Background;
-    private Drawable mCustomButton2Background;
-    private String mCustomButton1Text;
-    private String mCustomButton2Text;
-    private Drawable mButton1Background;
-    private Drawable mButton2Background;
-    private Drawable mButton3Background;
-    private Drawable mButton4Background;
-    private Drawable mButton5Background;
-    private Drawable mButton6Background;
-    private Drawable mButton7Background;
-    private Drawable mButton8Background;
-    private Drawable mButton9Background;
-    private Drawable mButton0Background;
+    private TextView mCustomButton1, mCustomButton2;
+    private Drawable mCustomButton1Background, mCustomButton2Background;
+    private String mCustomButton1Text, mCustomButton2Text;
+    private Drawable mButton1Background, mButton2Background, mButton3Background, mButton4Background,
+            mButton5Background, mButton6Background, mButton7Background, mButton8Background,
+            mButton9Background, mButton0Background;
     private float mTextSize;
     private int mTextColor;
     private boolean mTextBold;
     private String mFontFamily;
+    private TableRow mRow1, mRow2, mRow3, mRow4;
+    private TextView mSeparator11, mSeparator12, mSeparator21, mSeparator22, mSeparator31,
+    mSeparator32, mSeparator41, mSeparator42;
+    private int mHorizontalSeparatorMargin, mVerticalSeparatorMargin;
 
     public NumPadView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -49,6 +46,7 @@ public class NumPadView extends LinearLayout {
         updateTextSize();
         updateTextColor();
         updateFontFamily();
+        updateSeparators();
     }
 
     public void setNumberPadClickListener(OnNumPadClickListener onNumberPadClickListener) {
@@ -56,7 +54,6 @@ public class NumPadView extends LinearLayout {
     }
 
     private void setUpView(Context context) {
-        setOrientation(VERTICAL);
         View view = inflate(context, R.layout.view_number_pad, this);
         initButtons(view);
     }
@@ -74,6 +71,17 @@ public class NumPadView extends LinearLayout {
         mButton9 = (TextView) view.findViewById(R.id.button9);
         mCustomButton1 = (TextView) view.findViewById(R.id.button_custom1);
         mCustomButton2 = (TextView) view.findViewById(R.id.button_custom2);
+        mRow1 = (TableRow) view.findViewById(R.id.row1);
+        mRow2 = (TableRow) view.findViewById(R.id.row2);
+        mRow3 = (TableRow) view.findViewById(R.id.row3);
+        mSeparator11 = (TextView) view.findViewById(R.id.vertical_1_1);
+        mSeparator12 = (TextView) view.findViewById(R.id.vertical_1_2);
+        mSeparator21 = (TextView) view.findViewById(R.id.vertical_2_1);
+        mSeparator22 = (TextView) view.findViewById(R.id.vertical_2_2);
+        mSeparator31 = (TextView) view.findViewById(R.id.vertical_3_1);
+        mSeparator32 = (TextView) view.findViewById(R.id.vertical_3_2);
+        mSeparator41 = (TextView) view.findViewById(R.id.vertical_4_1);
+        mSeparator42 = (TextView) view.findViewById(R.id.vertical_4_2);
     }
 
     private void setUpPadButtons(NumPadClickListener numberPadClickListener) {
@@ -92,15 +100,11 @@ public class NumPadView extends LinearLayout {
     }
 
     private void readAttributes(Context context, AttributeSet attrs) {
-        TypedArray a = context.getTheme().obtainStyledAttributes(
-                attrs,
-                R.styleable.NumPadView,
-                0, 0);
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.NumPadView, 0, 0);
 
         try {
             mTextSize = a.getDimension(R.styleable.NumPadView_textSize, 24);
-            mTextColor = a.getColor(R.styleable.NumPadView_textColor,
-                    getResources().getColor(R.color.grey));
+            mTextColor = a.getColor(R.styleable.NumPadView_textColor, getResources().getColor(R.color.grey));
             mTextBold = a.getBoolean(R.styleable.NumPadView_textBold, false);
             mFontFamily = a.getString(R.styleable.NumPadView_fontFamily);
 
@@ -115,14 +119,13 @@ public class NumPadView extends LinearLayout {
             mButton9Background = a.getDrawable(R.styleable.NumPadView_button9_background);
             mButton0Background = a.getDrawable(R.styleable.NumPadView_button0_background);
 
-            mCustomButton1Background =
-                    a.getDrawable(R.styleable.NumPadView_custom_button1_background);
-            mCustomButton2Background =
-                    a.getDrawable(R.styleable.NumPadView_custom_button2_background);
-            mCustomButton1Text =
-                    a.getString(R.styleable.NumPadView_custom_button1_text);
-            mCustomButton2Text =
-                    a.getString(R.styleable.NumPadView_custom_button2_text);
+            mCustomButton1Background = a.getDrawable(R.styleable.NumPadView_custom_button1_background);
+            mCustomButton2Background = a.getDrawable(R.styleable.NumPadView_custom_button2_background);
+            mCustomButton1Text = a.getString(R.styleable.NumPadView_custom_button1_text);
+            mCustomButton2Text = a.getString(R.styleable.NumPadView_custom_button2_text);
+
+            mVerticalSeparatorMargin = a.getLayoutDimension(R.styleable.NumPadView_verticalSeparatorMargin, 0);
+            mHorizontalSeparatorMargin = a.getLayoutDimension(R.styleable.NumPadView_horizontalSeparatorMargin, 0);
         } finally {
             a.recycle();
         }
@@ -193,5 +196,31 @@ public class NumPadView extends LinearLayout {
         mButton9.setTypeface(fontStyle);
         mCustomButton1.setTypeface(fontStyle);
         mCustomButton2.setTypeface(fontStyle);
+    }
+
+    private void updateSeparators() {
+        updateHorizontalSeparator(mRow1);
+        updateHorizontalSeparator(mRow2);
+        updateHorizontalSeparator(mRow3);
+        updateVerticalSeparator(mSeparator11);
+        updateVerticalSeparator(mSeparator12);
+        updateVerticalSeparator(mSeparator21);
+        updateVerticalSeparator(mSeparator22);
+        updateVerticalSeparator(mSeparator31);
+        updateVerticalSeparator(mSeparator32);
+        updateVerticalSeparator(mSeparator41);
+        updateVerticalSeparator(mSeparator42);
+    }
+
+    private void updateHorizontalSeparator(TableRow tableRow) {
+        TableLayout.LayoutParams tableRowParams = (TableLayout.LayoutParams) tableRow.getLayoutParams();
+        tableRowParams.setMargins(0, 0, 0, mHorizontalSeparatorMargin);
+        tableRow.setLayoutParams(tableRowParams);
+    }
+
+    private void updateVerticalSeparator(TextView view) {
+        ViewGroup.LayoutParams lp = view.getLayoutParams();
+        lp.width = mVerticalSeparatorMargin;
+        view.setLayoutParams(lp);
     }
 }
