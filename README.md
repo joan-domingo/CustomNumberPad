@@ -33,6 +33,18 @@ dependencies {
 ## Usage
 
 Include NumPadView in your layout XML.
+
+A simple example:
+```
+<cat.xojan.numpad.NumPadView
+        android:id="@+id/custom_number_pad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        numpad:textColor="@color/dark_grey"/>
+
+```
+
+An example with all the possible options:
 ```
 <cat.xojan.numpad.NumPadView
         android:id="@+id/custom_number_pad"
