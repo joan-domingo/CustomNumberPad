@@ -1,6 +1,4 @@
 [![Platform](https://img.shields.io/badge/Platform-Android-brightgreen.svg?style=flat-square)]()
-[ ![Download](https://api.bintray.com/packages/xojan/maven/numpad/images/download.svg?version=1.1.0) ](https://bintray.com/xojan/maven/numpad/1.1.0/link)
-[![API](https://img.shields.io/badge/API-14%2B-orange.svg?style=flat-square)]()
 
 # Customizable Numeric Keypad for Android
 This is a library that provides a customizable numeric keypad view for Android.
@@ -12,21 +10,14 @@ Contributions are welcome.
 
 
 ## Download
-Include the following repository in your module gradle.build file.
-
- ```
-repositories {
-    maven {
-        url 'https://dl.bintray.com/xojan/maven/'
-    }
-}}
- ```
+Include the [AAR file](https://github.com/joan-domingo/CustomNumberPad/tree/master/sample/lib/numpad-release.aar)
+ in your project directory.
   
-And add the gradle dependency.
+And add the dependency to the gradle.build file.
 
  ```
 dependencies {
-    compile 'cat.xojan:numpad:1.1.0'
+    implementation files('lib/numpad-release.aar')
 }
  ```
 
